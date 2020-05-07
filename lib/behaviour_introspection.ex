@@ -1,10 +1,13 @@
 defmodule Behaviour.Introspection do
-  @impl_detection_methods [
-    :beam_file_introspection,
-    :code_all_loaded
-  ]
-
-  def impls(behaviour, impl_detection_method \\ @impl_detection_methods)
+  def impls(behaviour) do
+    impls(
+      behaviour,
+      case :code.get_mode() do
+        :interactive -> ~w(beam_file_introspection code_all_loaded)a
+        :embedded -> :code_all_loaded
+      end
+    )
+  end
 
   def impls(behaviour, impl_detection_methods) when is_list(impl_detection_methods) do
     impl_detection_methods
