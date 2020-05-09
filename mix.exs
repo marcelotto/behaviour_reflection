@@ -1,9 +1,9 @@
-defmodule BehaviourIntrospection.MixProject do
+defmodule BehaviourReflection.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :behaviour_introspection,
+      app: :behaviour_reflection,
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,

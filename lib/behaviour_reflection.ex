@@ -1,4 +1,4 @@
-defmodule Behaviour.Introspection do
+defmodule Behaviour.Reflection do
   @moduledoc """
   Find all modules implementing a Behaviour.
   """
