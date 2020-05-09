@@ -1,5 +1,26 @@
 defmodule Behaviour.Introspection do
-  def impls(behaviour) do
+  @moduledoc """
+  Find all modules implementing a Behaviour.
+  """
+
+  @doc """
+  Find and load all modules implementing the given Behaviour.
+
+  Several methods to detect implementations can be applied:
+
+  - `:beam_file_introspection`: filters all modules in `.beam` files of the
+    Mix project implementing `behaviour`
+  - `:code_all_loaded`: filters all modules  returned by `:code.all_loaded/0`
+    the implementing `behaviour`
+
+  Unless otherwise specified with the optional `impl_detection_methods` argument,
+  both methods are applied when the BEAM is running in interactive mode (which is
+  the default). In embedded mode (which is used in releases), only the `:code_all_loaded`
+  method and should be sufficient since the boot script loads all modules upfront.
+  """
+  def impls(behaviour, impl_detection_methods \\ nil)
+
+  def impls(behaviour, nil) do
     impls(
       behaviour,
       case :code.get_mode() do
