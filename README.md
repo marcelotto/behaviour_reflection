@@ -6,6 +6,8 @@
 
 Get all modules implementing an Elixir behaviour.
 
+See [this article](https://medium.com/@MarcelOttoDE/the-walled-gardens-within-elixir-d0507a568015) for an analysis of the problem, the circumstances for when to use this library, how it works and its caveats.
+
 
 ## Installation
 
