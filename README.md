@@ -1,5 +1,9 @@
 # Behaviour.Reflection
 
+[![Travis](https://img.shields.io/travis/marcelotto/behaviour_reflection.svg?style=flat-square)](https://travis-ci.org/marcelotto/behaviour_reflection)
+[![Hex.pm](https://img.shields.io/hexpm/v/behaviour_reflection.svg?style=flat-square)](https://hex.pm/packages/behaviour_reflection)
+
+
 Get all modules implementing an Elixir behaviour.
 
 
